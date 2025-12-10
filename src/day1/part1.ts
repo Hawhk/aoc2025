@@ -1,5 +1,7 @@
+import os from "os";
+
 function part1(input: string): number | string {
-  const instructions = input.split("\r\n");
+  const instructions = input.split(os.EOL);
 
   let result = 0;
   let currentPosition = 50;

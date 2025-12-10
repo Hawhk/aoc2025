@@ -1,7 +1,9 @@
+import os from "os";
+
 function part2(input: string): number | string {
   let result = 0;
 
-  const lines = input.split("\r\n");
+  const lines = input.split(os.EOL);
 
   for (const line of lines) {
     const numbers = line.split("").map(Number);

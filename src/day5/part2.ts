@@ -1,3 +1,5 @@
+import os from "os";
+
 interface Range {
   start: number;
   end: number;
@@ -6,7 +8,7 @@ interface Range {
 function part2(input: string): number | string {
   let result = 0;
 
-  const rows = input.split("\r\n");
+  const rows = input.split(os.EOL);
 
   const emptyRowIndex = rows.findIndex((row) => row === "");
   const ranges: Range[] = rows.slice(0, emptyRowIndex).map((row) => {

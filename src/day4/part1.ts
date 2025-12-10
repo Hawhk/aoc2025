@@ -1,7 +1,9 @@
+import os from "os";
+
 function part1(input: string): number | string {
   let result = 0;
 
-  const grid = input.split("\r\n").map((line) => line.split(""));
+  const grid = input.split(os.EOL).map((line) => line.split(""));
 
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[i].length; j++) {
