@@ -35,22 +35,11 @@ function part2(input: string): number | string {
 
   merged.push({ start, end });
 
-  const ids = rows.slice(emptyRowIndex + 1).map(Number);
-  const map: Record<string, number> = {};
-  ids.forEach((id) => {
-    merged.forEach((range) => {
-      if (id >= range.start && id <= range.end) {
-        map[range.start + "-" + range.end] = range.end - range.start + 1;
-      }
-    });
-  });
-
-  console.log(map);
-
-  result = Object.values(map).reduce((acc, curr) => acc + curr, 0);
+  result = merged.reduce((acc, curr) => {
+    return acc + (curr.end - curr.start + 1);
+  }, 0);
 
   return result;
-  // not 345544261104784 should be higher
 }
 
 export default part2;
